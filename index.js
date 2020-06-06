@@ -78,13 +78,17 @@ finalScore(inning, 9) might return:
 
 function finalScore(each, total){
 
-  let home = 0;
-  let away = 0;
+  let bothScores = {
+    "home": 0,
+    "away":0,
+  };
 
-  for (i= 0; i < total * 2; i++) {
-    each();
+  for (i= 0; i < total ; i++) {
+    bothScores.home = bothScores.home + each();
+    bothScores.away = bothScores.away + each();
 
   }
+  console.log(bothScores)
 
 }
 
