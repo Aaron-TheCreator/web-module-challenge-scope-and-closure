@@ -87,10 +87,10 @@ function finalScore(each, total){
     bothScores.home = bothScores.home + each();
     bothScores.away = bothScores.away + each();
 
-  }
+  };
   console.log(bothScores)
 
-}
+};
 
 /* Task 4: 
 
@@ -113,8 +113,20 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
-}
+function scoreboard(each, total) {
+  let bothScores = {
+    "home": 0,
+    "away":0,
+  };
+
+  for (i= 0; i < total ; i++) {
+    bothScores.home = bothScores.home + each();
+    bothScores.away = bothScores.away + each();
+    console.log(`${i}st inning: ${bothScores.home}-${bothScores.away}`);
+  };
+  
+
+ 
+};
 
 
