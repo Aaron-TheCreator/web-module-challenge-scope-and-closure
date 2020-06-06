@@ -122,11 +122,18 @@ function scoreboard(each, total) {
   for (i= 0; i < total ; i++) {
     bothScores.home = bothScores.home + each();
     bothScores.away = bothScores.away + each();
-    console.log(`${i}st inning: ${bothScores.home}-${bothScores.away}`);
+    if (i === 0){
+    console.log(`${i+1}st inning: ${bothScores.home}-${bothScores.away}`);
+    } else if (i === 1) {
+      console.log(`${i+1}nd inning: ${bothScores.home}-${bothScores.away}`);
+    } else if (i=== 2) {
+      console.log(`${i+1}rd inning: ${bothScores.home}-${bothScores.away}`);
+    } else {
+      console.log(`${i+1}th inning: ${bothScores.home}-${bothScores.away}`);
+    };
   };
-  
-
- 
 };
+
+scoreboard(inning, 9);
 
 
