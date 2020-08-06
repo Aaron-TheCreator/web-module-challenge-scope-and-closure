@@ -42,6 +42,8 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+  Closure gives us the ability to put functions together and to access the child function after the parent has been terminated. Closure defines code that is identified one place that can be used later.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -64,10 +66,10 @@ dansRoll();
 
 a. Where is closure used in this code? How can you tell? 
 
-personalDice function uses closure, i can tell by the use of a return function nested within personalDice()
+  personalDice function uses closure, i can tell by the use of a return function nested within personalDice()
 
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-dansRoll() is personalDice() with a set parameter "dan" for name, name will not change, the function will randomly pick a number 1-6 each time it is called because of personalDice()'s nested return function
+  dansRoll() is personalDice() with a set parameter "dan" for name, name will not change, the function will randomly pick a number 1-6 each time it is called because of personalDice()'s nested return function
 
 c. What is the lexical scope of `newRoll`? 
 `newRoll` has function/block lvl scope, and cannot be accessed directly from outside of the personalDice() function

@@ -31,7 +31,7 @@ function processFirstItem(stringList, callback) {
  * 2. Which of the two uses a closure? How can you tell?
  * counter 1 uses closures, the variable in stored in block lvl scope, the return function increments the variable
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- * counter 1 would be preferable 
+ * counter 1 would be preferable, AVOID GLOBAL VARIABLES T ALL COSTS
 */
 
 // counter1 code
@@ -62,9 +62,11 @@ function inning(){
 
 };
 
+console.log(inning());
+
 /* Task 3: finalScore()
 
-Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
+Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and returns the final score of the game in the form of an object.
 
 For example, 
 
@@ -76,21 +78,23 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(each, total){
+// function finalScore(each, total){
 
-  let bothScores = {
-    "home": 0,
-    "away":0,
-  };
+//   let bothScores = {
+//     "home": 0,
+//     "away":0,
+//   };
 
-  for (i= 0; i < total ; i++) {
-    bothScores.home = bothScores.home + each();
-    bothScores.away = bothScores.away + each();
+//   for (i= 0; i < total ; i++) {
+//     bothScores.home = bothScores.home + each();
+//     bothScores.away = bothScores.away + each();
 
-  };
-  console.log(bothScores)
+//   };
+//   console.log(bothScores)
 
-};
+// };
+
+// finalScore(inning, 9);
 
 /* Task 4: 
 
@@ -132,6 +136,7 @@ function scoreboard(each, total) {
       console.log(`${i+1}th inning: ${bothScores.home}-${bothScores.away}`);
     };
   };
+  console.log(`Final Score: Home :${bothScores.home} -  Away: ${bothScores.away}`);
 };
 
 scoreboard(inning, 9);
