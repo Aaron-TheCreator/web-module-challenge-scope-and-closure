@@ -4,11 +4,40 @@
     <title>JavaScript Foundations</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
   </head>
   <body>
-    <p>This is The JavaScript Score Board Challenge</p>
 
-      <script src="index.js" ></script>
+    <!-- scoredboard background-Image container -->
+    <div class="scoreBoard">
+     
+      <!-- Score Board Tiles -->
+      <div class="home text" >
+        <h2 id="homeID"></h2>
+      </div>
+      <div class="inning text">
+        <h2 id="innID"></h2>
+      </div>
+      <div class="away text">
+        <h2 id="awayID"></h2>
+      </div>
+      <div class="buttonContainer">
+        <button type="button" class="button" onclick="scoreboardGame(inning, 9)">
+          PLAY
+        </button> 
+      </div>
+    </div>
+
+    <!-- Input from Button click scoreboardGame() JS -->
+    <div id="gameNum">
+      
+    </div>
+    <div class="textBox" id="winnerText">
+
+    </div>
+
+    <script src="index.js" ></script>
 
   </body>
 </html>

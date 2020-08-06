@@ -62,7 +62,7 @@ function inning(){
 
 };
 
-console.log(inning());
+// console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -116,18 +116,54 @@ and returns the score at each pont in the game, like so:
 9th inning: 6 - 10
 
 Final Score: 6 - 10 */
+// task 4 answer
+// function scoreboard(each, total) {
+//   let bothScores = {
+//     "home": 0,
+//     "away":0,
+//   };
 
-function scoreboard(each, total) {
+//   for (i= 0; i < total ; i++) {
+//     bothScores.home = bothScores.home + each();
+//     bothScores.away = bothScores.away + each();
+//     if (i === 0){
+//     console.log(`${i+1}st inning: ${bothScores.home}-${bothScores.away}`);
+//     } else if (i === 1) {
+//       console.log(`${i+1}nd inning: ${bothScores.home}-${bothScores.away}`);
+//     } else if (i=== 2) {
+//       console.log(`${i+1}rd inning: ${bothScores.home}-${bothScores.away}`);
+//     } else {
+//       console.log(`${i+1}th inning: ${bothScores.home}-${bothScores.away}`);
+//     };
+//   };
+//   console.log(`Final Score: Home :${bothScores.home} -  Away: ${bothScores.away}`);
+// };
+
+// scoreboard(inning, 9);
+
+
+
+// new function for button
+function scoreboardGame(each, total) {
+
+
+
+  // object holds score
   let bothScores = {
     "home": 0,
     "away":0,
   };
 
+  // let homeScore = bothScores.home;
+  // let awayScore = bothScores.away;
+
+  // for loop records all innings in console and finds winner
   for (i= 0; i < total ; i++) {
     bothScores.home = bothScores.home + each();
     bothScores.away = bothScores.away + each();
     if (i === 0){
     console.log(`${i+1}st inning: ${bothScores.home}-${bothScores.away}`);
+
     } else if (i === 1) {
       console.log(`${i+1}nd inning: ${bothScores.home}-${bothScores.away}`);
     } else if (i=== 2) {
@@ -136,9 +172,38 @@ function scoreboard(each, total) {
       console.log(`${i+1}th inning: ${bothScores.home}-${bothScores.away}`);
     };
   };
+
+  // game counter
+  function counter() {
+    count++;
+  };
+  counter();
+
+  // prints game count to HTML and console
+  document.getElementById("gameNum").innerHTML = `<h2 id="counterID">Game ${count}</h2>`;
+  console.log(`Game ${count}`);
+
+
+   
+  // if conditional adds HTML text For winnerText text box
+  if (bothScores.home > bothScores.away) {
+    document.getElementById("winnerText").innerHTML = `<h2>The Final Score is ${bothScores.home} - ${bothScores.away}. The HOME Team Wins!</h2>`;
+    console.log(`Home team wins ${bothScores.home}-${bothScores.away}.`);
+  } else if (bothScores.home < bothScores.away) {
+    document.getElementById("winnerText").innerHTML = `<h2>The Final Score is ${bothScores.home} - ${bothScores.away}. The HOME Team Loses!</h2>`;
+    console.log(`Home Team Loses ${bothScores.home}-${bothScores.away}.`);
+  } else {
+    document.getElementById("winnerText").innerHTML = `<h2> The Final Score is ${bothScores.home} - ${bothScores.away}. Its a Draw! Play Again.</h2>`;
+    console.log(`${bothScores.home}-${bothScores.away}`);
+  };
+
+  // assigns scoreboard outcome for HTML fields & console
+  document.getElementById("homeID").innerHTML = bothScores.home;
+  document.getElementById("innID").innerHTML = 9 ;
+  document.getElementById("awayID").innerHTML = bothScores.away;
   console.log(`Final Score: Home :${bothScores.home} -  Away: ${bothScores.away}`);
 };
 
-scoreboard(inning, 9);
+// scoreboard(inning, 9);
 
 

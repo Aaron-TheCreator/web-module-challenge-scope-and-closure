@@ -72,7 +72,7 @@ b. Compare and contrast calling `dansRoll` the first and second time. What is al
   dansRoll() is personalDice() with a set parameter "dan" for name, name will not change, the function will randomly pick a number 1-6 each time it is called because of personalDice()'s nested return function
 
 c. What is the lexical scope of `newRoll`? 
-`newRoll` has function/block lvl scope, and cannot be accessed directly from outside of the personalDice() function
+  `newRoll` has function/block lvl scope, and cannot be accessed directly from outside of the personalDice() function
 
 ### Task 3 - Stretch Goals
 
